@@ -15,3 +15,14 @@ If you are developing a production application, we recommend using TypeScript an
 I am using vite for first time and created react app via vite command 
 - I saw that it connected to locahost super fast
 - HMR - no reloading nothing only UI sve and that much gets updated
+
+
+const useFetch = (url) => {
+  const [data, setData] = useState(null);
+  useEffect(() => {
+    fetch(url)
+      .then((res) => res.json())
+      .then(setData);
+  }, [url]);
+  return data;
+};

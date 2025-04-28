@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const Products = ({setItemInCart}) => {
+const Products = () => {
     const [productsList, setProductList] = useState([]);
 
     useEffect(() => {
@@ -9,6 +9,15 @@ const Products = ({setItemInCart}) => {
             .then(res => res.json())
             .then(data => setProductList(data.products));
     }, [])
+    // useEffect(() => {
+    //   const fetchData = async () => {
+    //     const response = await fetch('url');
+    //     const data = await response.json();
+    //     setData(data);
+    //   };
+    //   fetchData();
+    // }, []);
+    
 
     const addToCart = async (title, price) => {
         try {
