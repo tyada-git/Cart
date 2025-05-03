@@ -20,9 +20,9 @@ function App() {
           Cart
         </Link>
       </nav>
-
+      <p>My Counter {count}</p>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home setCount={setCount} count={count} />} />
         <Route path="/products" element={<Products />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/careers" element={<Career />} />

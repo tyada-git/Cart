@@ -1,15 +1,19 @@
 import React from "react";
 
-const Home = () => {
+const Home = ({ setCount, count }) => {
+  const handleCount = () => {
+    console.log("going");
+    setCount(count + 1);
+  };
   return (
     <>
       <p>
         The time is <time>10:20pm</time>
       </p>
-      <p>
-        {" "}
+      <div>
         Address here is <address>3-b/3 sahara states</address>
-      </p>
+      </div>
+      <button onClick={handleCount}>Click me </button>
     </>
   );
 };
