@@ -4,7 +4,7 @@ const initialState = {
   city: "",
   num: 0,
 };
-const formReducer = (formContent, action) => {
+const formReducer = (formContent = initialState, action) => {
   switch (action.type) {
     case "setName":
       return { ...formContent, name: action.payload };
@@ -30,7 +30,7 @@ const Career = () => {
   }, []);
   const onSubmitForm = () => {
     const prepData = { formContent };
-    localStorage.setItem("firstName", name);
+    localStorage.setItem("firstName", formContent.name);
     console.log("prepData", prepData);
   };
   return (
