@@ -26,6 +26,7 @@ const PhotoBook = () => {
           <input
             type="text"
             placeholder="add age here"
+            value={formData.age}
             onChange={(e) =>
               dispatch({ type: "SET_AGE", payload: e.target.value })
             }
