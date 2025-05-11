@@ -40,22 +40,24 @@
 .read-the-docs {
   color: #888;
 }
-.navbar{
-  width:1020px;
+.navbar {
+  width: 1020px;
   height: 80px;
   background-color: lightyellow;
 }
-.cart{
+.cart {
   float: right;
 }
-.product-tile{
+.product-tile {
   border: 1px solid green;
   width: 300px;
   min-height: 100px;
   display: inline-block;
   margin: 20px;
 }
-.btn-product{
+.btn-product {
   background-color: greenyellow;
 }
-
+.my-info {
+  background-color: greenyellow;
+}

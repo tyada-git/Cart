@@ -15,4 +15,3 @@ function Counter() {
   return <button onClick={handleClicks}>New Component{count}</button>;
 }
 export default Counter;
-// export default Home;

@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { Increment } from "./actions/counterAction";
 import { useState } from "react";
 import Counter from "./Counter";
+import HomeClass from "./HomeClass";
+import ChildReactMemoComponent from "./ChildReactMemoComponent";
 
 const Home = () => {
   // const dispatch = useDispatch();
@@ -23,7 +25,7 @@ const Home = () => {
   }, []);
   return (
     <>
-      <Counter />
+      {/* <Counter /> */}
       <p>
         The time is <time>10:20pm</time>
       </p>
@@ -35,6 +37,8 @@ const Home = () => {
       <button onClick={handleCount} role="button">
         Click me {count}
       </button>
+      <HomeClass name={"tanushree class"} />
+      <ChildReactMemoComponent name={"tanushree"} age={29} />
     </>
   );
 };
