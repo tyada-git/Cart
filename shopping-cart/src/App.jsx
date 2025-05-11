@@ -6,6 +6,7 @@ import Photobook from "./Photobook";
 import Career from "./Career";
 import { Link, Route, Routes } from "react-router-dom";
 import Cart from "./Cart";
+import MakeUp from "./MakeUp";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -27,6 +28,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/careers" element={<Career />} />
         <Route path="/pictures" element={<Photobook />} />
+        <Route path="/products/makeup" element={<MakeUp />} />
       </Routes>
     </>
   );

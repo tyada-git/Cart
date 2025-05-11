@@ -13,7 +13,7 @@ const formReducer = (formContent = initialState, action) => {
     case "setNumber":
       return { ...formContent, num: action.payload };
     default:
-      return state;
+      return formContent;
   }
 };
 

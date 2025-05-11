@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
+import { Link, Route, Routes } from "react-router-dom";
+import MakeUp from "./MakeUp";
 
 const Products = () => {
   const [productsList, setProductList] = useState([]);
@@ -39,19 +41,34 @@ const Products = () => {
     }
   };
 
+  function debounce(fn, d) {
+    let timer;
+    return function (...args) {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        fn.apply(this, args);
+      }, d);
+    };
+  }
+
   const handleFilter = (e) => {
-    console.log("normal", productsList);
+    console.log("normal", e.target.value);
     const filteredProduct = productsList.filter((p) =>
       p.title.toLowerCase().includes(e.target.value)
     );
     setFiltered(filteredProduct);
   };
+
+  const debounceFn = useMemo(() => debounce(handleFilter, 300), []);
+
   return (
     <>
       Welcome to Products
+      <Link to="/makeup">makeup</Link>
       <div>
         <div>
-          <input type="text" onChange={handleFilter} />
+          {/* <input type="text" onChange={handleFilter} /> */}
+          <input type="text" onChange={(e) => debounceFn(e)} />
         </div>
         {filteredProductList.length == 0
           ? "No results found"
