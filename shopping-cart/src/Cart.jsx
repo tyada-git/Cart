@@ -11,7 +11,6 @@ const Cart = () => {
   const showName = localStorage.getItem("firstName");
   return (
     <>
-      {" "}
       {showName}
       <h2>Items in Your Cart</h2>
       {itemInCart.map((p) => (
