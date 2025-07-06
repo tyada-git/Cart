@@ -34,7 +34,8 @@ jobs:
           wait-on http://localhost:4173
 
       - name: Run Pa11y Accessibility Audit
-        run: pa11y http://localhost:4173 --reporter html > pa11y-report.html
+        run: pa11y http://localhost:4173 --reporter html --chrome-launch-options="--no-sandbox" > pa11y-report.html
+
 
       - name: Upload Accessibility Report
         uses: actions/upload-artifact@v4
