@@ -1,8 +1,9 @@
-name: Accessibility Audit on PR
+name: Accessibility Audit
 
 on:
   pull_request:
     branches: [main]
+  workflow_dispatch:  # 👈 allows manual trigger
 
 jobs:
   accessibility:
