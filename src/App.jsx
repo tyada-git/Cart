@@ -17,18 +17,19 @@ function App() {
         <Link to="/products">Products </Link>
         <Link to="/careers">Careers </Link>
         <Link to="/pictures">PhotoBook </Link>
+        <Link to="/makeup">MakeUp </Link>
         <Link to="/cart" className="cart">
           Cart
         </Link>
       </nav>
-      <p>My Counter {count}</p>
+      {/* <p>My Counter {count}</p> */}
       <Routes>
         <Route path="/" element={<Home setCount={setCount} count={count} />} />
         <Route path="/products" element={<Products />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/careers" element={<Career />} />
         <Route path="/pictures" element={<Photobook />} />
-        <Route path="/products/makeup" element={<MakeUp />} />
+        <Route path="/makeup" element={<MakeUp />} />
       </Routes>
     </>
   );

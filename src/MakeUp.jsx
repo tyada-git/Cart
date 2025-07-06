@@ -13,7 +13,7 @@ const MakeUp = () => {
 
   const fetchData = async () => {
     try {
-      const res = await fetch("https://uiuyiy.typicode.com/tods/1");
+      const res = await fetch("http://localhost:3001/makeup");
       const data = await res.json();
       setData(data);
     } catch (err) {

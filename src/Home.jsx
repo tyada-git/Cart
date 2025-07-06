@@ -5,6 +5,7 @@ import { useState } from "react";
 import Counter from "./Counter";
 import HomeClass from "./HomeClass";
 import ChildReactMemoComponent from "./ChildReactMemoComponent";
+import NewReviseComponent from "./NewReviseComponent";
 
 const Home = () => {
   // const dispatch = useDispatch();
@@ -32,13 +33,14 @@ const Home = () => {
       <input type="text" placeholder="my name here" ref={myref} />
       <div>
         {/* {counter} */}
-        Address here is <address>3-b/3 sahara states</address>
+        Address is <address>3-b/3 sahara states</address>
       </div>
       <button onClick={handleCount} role="button">
         Click me {count}
       </button>
-      <HomeClass name={"tanushree class"} />
-      <ChildReactMemoComponent name={"tanushree"} age={29} />
+      {/* <HomeClass name={"tanushree class"} /> */}
+      {/* <ChildReactMemoComponent name={"tanushree"} age={29} /> */}
+      {/* <NewReviseComponent /> */}
     </>
   );
 };

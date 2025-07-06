@@ -1,4 +1,5 @@
 import React, { useEffect, useReducer, useRef, useState } from "react";
+
 const initialState = {
   name: "",
   city: "",
@@ -30,7 +31,23 @@ const Career = () => {
   }, []);
   const onSubmitForm = () => {
     const prepData = { formContent };
+    const houseName = formContent.name;
+    const price = 1000;
     localStorage.setItem("firstName", formContent.name);
+    fetch("http://localhost:3001/houses", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ houseName, price }),
+    })
+      .then(() => {
+        console.log("Houses Data sent successfully to post API");
+      })
+      .catch(() => {
+        console.error("Error sending Houses Data");
+      });
+
     console.log("prepData", prepData);
   };
   return (
