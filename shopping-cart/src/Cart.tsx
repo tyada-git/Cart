@@ -13,7 +13,7 @@ const Cart: React.FC = () => {
       .then((res) => res.json())
       .then((data) => setItem(data));
   }, []);
-  console.log(itemInCart);
+  // console.log(itemInCart);
   // const showName = localStorage.getItem(firstName);
   return (
     <>
