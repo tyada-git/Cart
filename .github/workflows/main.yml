@@ -22,22 +22,22 @@ jobs:
       - name: Install Project Dependencies
         run: npm ci
 
-      - name: Build React App
+      - name: Build Vite App
         run: npm run build
 
-      - name: Install Global Tools (serve, wait-on, pa11y)
-        run: npm install -g serve wait-on pa11y
+      - name: Install wait-on and pa11y
+        run: npm install -g wait-on pa11y
 
-      - name: Serve the App Locally
+      - name: Start Vite Preview Server
         run: |
-          serve -s build -l 5000 &
-          wait-on http://localhost:5000
+          npm run preview &  # Starts Vite preview server (usually on port 4173)
+          wait-on http://localhost:4173
 
       - name: Run Pa11y Accessibility Audit
-        run: pa11y http://localhost:5000 --reporter html > pa11y-report.html
+        run: pa11y http://localhost:4173 --reporter html > pa11y-report.html
 
       - name: Upload Accessibility Report
         uses: actions/upload-artifact@v4
         with:
-          name: accessibility-report
+          name: pa11y-report
           path: pa11y-report.html
