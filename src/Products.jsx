@@ -25,7 +25,7 @@ const Products = () => {
 
   const addToCart = async (title, price) => {
     try {
-      const response = await fetch("http://localhost:3001/cart", {
+      const response = await fetch("/api/cart", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
