@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 const Cart = () => {
   const [itemInCart, setItem] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3001/show-item")
+    fetch("/api/show-item")
       .then((res) => res.json())
       .then((data) => setItem(data));
   }, []);
