@@ -8,11 +8,11 @@ const app = express();
 app.use(cors());
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "*",
     methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
   })
 );
+
 // app.use((res, req, next)=>{
 // req.send('<p>Server is up</p>')
 // })
@@ -34,11 +34,12 @@ db.execute("SELECT * FROM houses")
   .catch((err) => {
     console.error("Error fetching data from database:", err);
   });
-app.post("/cart", (req, res, next) => {
-  console.log(req.body);
-  // savedResponses.push(req.body);
-  // res.json(req.body);
-  res.status(200).json({ message: "Cart updated successfully ", status: 200 });
+app.post("/cart", (req, res) => {
+  savedResponses.push(req.body);
+  res.status(200).json({
+    message: "Cart updated successfully",
+    data: req.body,
+  });
 });
 
 app.get("/show-item", (req, res, next) => {
@@ -64,6 +65,9 @@ app.post("/houses", (req, res, next) => {
       res.status(500).json({ error: "Error sending Houses Data to db" });
     });
 });
-app.listen("3001", () => {
-  console.log("server running");
+// app.listen("3001", () => {
+//   console.log("server running");
+// });
+app.listen(3001, "0.0.0.0", () => {
+  console.log("Server running on port 3001");
 });
