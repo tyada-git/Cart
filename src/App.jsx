@@ -7,6 +7,8 @@ import Career from "./Career";
 import { Link, Route, Routes } from "react-router-dom";
 import Cart from "./Cart";
 import MakeUp from "./MakeUp";
+import GetTodos from "./GetTodos";
+import TimeTac from "./Timetac";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -18,6 +20,8 @@ function App() {
         <Link to="/careers">Careers </Link>
         <Link to="/pictures">PhotoBook </Link>
         <Link to="/makeup">MakeUp </Link>
+        <Link to="/todos">Todos</Link>
+        <Link to="/timetac">TimeTac</Link>
         <Link to="/cart" className="cart">
           Cart
         </Link>
@@ -30,6 +34,8 @@ function App() {
         <Route path="/careers" element={<Career />} />
         <Route path="/pictures" element={<Photobook />} />
         <Route path="/makeup" element={<MakeUp />} />
+        <Route path="/todos" element={<GetTodos />} />
+        <Route path="/timetac" element={<TimeTac />} />
       </Routes>
     </>
   );
